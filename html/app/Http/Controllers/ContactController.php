@@ -11,10 +11,10 @@ class ContactController extends Controller
         $contacts = Contact::all();
         return view('contacts.index', compact('contacts'));
     }
+
     public function create() {
         return view('contacts.create');
     }
-
     public function store(Request $request) {
         $validated = $request->validate([
             'name' => 'required|min:5',
@@ -23,5 +23,9 @@ class ContactController extends Controller
         ]);
         $contact = Contact::create($validated);
         return redirect()->route('contacts.index')->with('success', "Contact <strong> {$contact->name} </strong> created successfully.");
+    }
+
+    public function show(Contact $contact) {
+        return view('contacts.show', compact('contact'));
     }
 }
