@@ -54,5 +54,10 @@
         <a href="{{ route('contacts.index') }}" class="btn btn-secondary">Cancel</a>
         <button type="submit" class="btn btn-primary">Update Contact</button>
     </form>
+    <form action="{{ route('contacts.destroy', $contact) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this contact?')">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+    </form>
 </div>
 @endsection
