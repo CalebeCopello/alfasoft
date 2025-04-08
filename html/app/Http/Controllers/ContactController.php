@@ -51,4 +51,9 @@ class ContactController extends Controller
         $contact->update($validated);
         return redirect()->route('contacts.index')->with('success', "Contact <strong> {$contact->name} </strong> updated succesfully.");
     }
+
+    public function destroy(Contact $contact) {
+        $contact->delete();
+        return redirect()->route('contacts.index')->with('success', "Contact <strong> {$contact->name} </strong> deleted succesfully.");
+    }
 }
