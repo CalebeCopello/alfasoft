@@ -1,9 +1,10 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Create Contact
+        </h2>
+    </x-slot>
 <div class="container">
-    <h1>Add New Contact</h1>
-
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Error!</strong> Fix the following issues:
@@ -56,4 +57,4 @@
             <button type="submit" class="btn btn-primary">Create Contact</button>
         </form>
     </div>
-    @endsection
+</x-app-layout>
