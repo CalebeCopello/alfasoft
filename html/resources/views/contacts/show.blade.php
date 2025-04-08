@@ -17,7 +17,7 @@
     <form action="{{ route('contacts.destroy', $contact) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this contact?')">
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+        <button type="submit" class="btn btn-danger">Delete</button>
     </form>
 </div>
 @endsection
